@@ -7,7 +7,7 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:warehouse_manegment_system/controller/home_page_controller_customer.dart';
 import 'package:warehouse_manegment_system/controller/profile_page_controller.dart';
 import 'package:warehouse_manegment_system/controller/welcome_page_controller.dart';
-import 'package:warehouse_manegment_system/main.dart';
+import 'package:warehouse_manegment_system/model/models/sign_in_model.dart';
 
 class HomePageCustomer extends StatelessWidget {
   const HomePageCustomer({super.key});
@@ -53,18 +53,17 @@ class HomePageCustomer extends StatelessWidget {
                   },
                   icon: const Icon(Icons.supervised_user_circle_outlined),
                 ),
-                sharedPreferences!.getString("token") != null
+                userToken != null
                     ? IconButton(
                         onPressed: () async {
                           controller.loadingIndecatorTrue();
                           try {
                             await controller.logOut();
-                            sharedPreferences!.clear();
                             // userId = null;
                             print('succsess');
                             controller.loadingIndecatorFalse();
                             // print('token=$token');
-                            // userToken = null;
+                            userToken = null;
 
                             controller.showSnackBar(
                               context,
@@ -85,7 +84,6 @@ class HomePageCustomer extends StatelessWidget {
                     : IconButton(
                         onPressed: () {
                           Get.offAllNamed(WelcomePageController.id);
-                          sharedPreferences!.clear();
                         },
                         icon: const Icon(Icons.backspace_outlined),
                       )
