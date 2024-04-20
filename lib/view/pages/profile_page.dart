@@ -20,7 +20,7 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:warehouse_manegment_system/controller/change_password_page_controller.dart';
 import 'package:warehouse_manegment_system/controller/profile_page_controller.dart';
 import 'package:warehouse_manegment_system/controller/update_user_details_controller.dart';
-import 'package:warehouse_manegment_system/main.dart';
+import 'package:warehouse_manegment_system/model/models/sign_in_model.dart';
 import 'package:warehouse_manegment_system/model/models/user_model.dart';
 import 'package:warehouse_manegment_system/model/services/get_user_details__by_token_service.dart';
 import 'package:warehouse_manegment_system/view/widgets/custom_button.dart';
@@ -118,7 +118,7 @@ class ProfilePage extends StatelessWidget {
                         color: Colors.white,
                       ),
                       child: FutureBuilder<UserModel>(
-                        future: sharedPreferences!.getString("token") != null
+                        future: userToken != null
                             ? GetUserDetailsByTokenService()
                                 .getUserDetailsByToken()
                             : Future.error(
@@ -137,8 +137,7 @@ class ProfilePage extends StatelessWidget {
                                 style: const TextStyle(fontSize: 18),
                               ),
                             );
-                          } else if (snapshot.hasData &&
-                              sharedPreferences!.getString("token") != null) {
+                          } else if (snapshot.hasData && userToken != null) {
                             controller.userModel = snapshot.data!;
 
                             return ListView(
