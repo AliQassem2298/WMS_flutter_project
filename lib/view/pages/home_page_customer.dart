@@ -4,17 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:warehouse_manegment_system/controller/home_page_controller.dart';
+import 'package:warehouse_manegment_system/controller/home_page_controller_customer.dart';
 import 'package:warehouse_manegment_system/controller/profile_page_controller.dart';
 import 'package:warehouse_manegment_system/controller/welcome_page_controller.dart';
 import 'package:warehouse_manegment_system/main.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomePageCustomer extends StatelessWidget {
+  const HomePageCustomer({super.key});
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<HomePageController>(
-      init: HomePageController(),
+    return GetBuilder<HomePageControllerCustomer>(
+      init: HomePageControllerCustomer(),
       builder: (controller) {
         return ModalProgressHUD(
           inAsyncCall: controller.isLoading,
@@ -91,7 +91,17 @@ class HomePage extends StatelessWidget {
                       )
               ],
             ),
-            // body:
+            body: Center(
+              child: sharedPreferences!.getString("token") != null
+                  ? Text(
+                      "Welcome Customer",
+                      style: TextStyle(fontSize: 25),
+                    )
+                  : Text(
+                      "Welcome Geust",
+                      style: TextStyle(fontSize: 25),
+                    ),
+            ),
           ),
         );
       },

@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:warehouse_manegment_system/model/models/logout_model.dart';
 import 'package:warehouse_manegment_system/model/services/log_out_service.dart';
 
-class HomePageController extends GetxController {
-  static String id = '/homePage';
+class HomePageControllerStaff extends GetxController {
+  static String id = '/homePageStaff';
 
   bool isLoading = false;
 

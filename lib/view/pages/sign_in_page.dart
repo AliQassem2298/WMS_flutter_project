@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:warehouse_manegment_system/controller/forget_password_page_controller.dart';
-import 'package:warehouse_manegment_system/controller/home_page_controller.dart';
+import 'package:warehouse_manegment_system/controller/home_page_controller_staff.dart';
 import 'package:warehouse_manegment_system/controller/sign_in_page_controller.dart';
 import 'package:warehouse_manegment_system/controller/sign_up_page_controller.dart';
 import 'package:warehouse_manegment_system/controller/welcome_page_controller.dart';
@@ -173,7 +173,7 @@ class SignInPage extends StatelessWidget {
                                       context,
                                       'Sign in successful',
                                     );
-                                    Get.toNamed(HomePageController.id);
+                                    Get.toNamed(HomePageControllerStaff.id);
                                   } catch (e) {
                                     print(e.toString());
 
@@ -198,7 +198,7 @@ class SignInPage extends StatelessWidget {
                                 end: Alignment.topLeft,
                                 begin: Alignment.bottomRight,
                               ),
-                              routeName: HomePageController.id,
+                              routeName: HomePageControllerStaff.id,
                             ),
                           ),
                           Column(

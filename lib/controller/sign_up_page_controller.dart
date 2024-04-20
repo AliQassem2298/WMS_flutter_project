@@ -59,6 +59,8 @@ class SignUpPageController extends GetxController {
 
   Future<SignUpModel> signUp(SignUpPageController controller) {
     print('role: ${controller.role.text}');
+    // sharedPreferences!.setString("role", controller.role.text);
+
     return SignUpService().signUp(
       firstName: controller.firstName.text,
       lastName: controller.lastName.text,
