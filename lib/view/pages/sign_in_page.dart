@@ -176,12 +176,8 @@ class SignInPage extends StatelessWidget {
                                     print(e.toString());
                                     controller.showSnackBar(
                                       context,
-<<<<<<< HEAD
-                                      'Unable to log in with provided credentials.',
-=======
                                       e.toString(),
                                       // 'Unable to log in with provided credentials.',
->>>>>>> parent of 97036b3 (after add shared preferances)
                                     );
                                   }
                                   controller.loadingIndecatorFalse();

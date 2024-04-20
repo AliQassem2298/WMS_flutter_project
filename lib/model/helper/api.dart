@@ -15,7 +15,6 @@ import 'package:warehouse_manegment_system/model/models/sign_in_model.dart';
 // String baseUrl = 'http://10.0.2.2:8000/api'; ///// emulator
 
 String baseUrl = 'http://192.1681.101:8000/api'; ///// mobilde
->>>>>>> parent of 97036b3 (after add shared preferances)
 
 class Api {
   Future<dynamic> get({required String url, @required String? token}) async {
@@ -57,14 +56,11 @@ class Api {
 
       print(data);
       return data;
-<<<<<<< HEAD
-=======
     } else if (response.statusCode == 400) {
       Map<String, dynamic> data = jsonDecode(response.body);
       print(data);
 
       return data;
->>>>>>> parent of 97036b3 (after add shared preferances)
     } else {
       throw Exception(
           'there is a problem with status code ${response.statusCode} with body ${jsonDecode(response.body)}}');
