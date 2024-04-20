@@ -9,9 +9,7 @@ import 'package:warehouse_manegment_system/model/models/sign_in_model.dart';
 
 // String baseUrl = 'http://127.0.0.1:8000/api'; //////// windows
 
-<<<<<<< HEAD
 // String baseUrl = 'http://10.0.2.2:8000/api'; ///// mobilde
-=======
 // String baseUrl = 'http://10.0.2.2:8000/api'; ///// emulator
 
 String baseUrl = 'http://192.1681.101:8000/api'; ///// mobilde
